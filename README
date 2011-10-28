@@ -1,7 +1,0 @@
-module RSpec
-  module Mocks
-    module Methods
-      include SafeSpec
-    end
-  end
-end

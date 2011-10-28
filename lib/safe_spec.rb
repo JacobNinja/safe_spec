@@ -8,9 +8,9 @@ module SafeSpec
 
   def method_missing(meth, *args, &block)
     method_regex = /^safe_(.+)/
-    if meth =~ method_regex
+    if meth.to_s =~ method_regex
       assert_valid_methods!(args.first)
-      delegate_to = method_regex.match(meth)[1]
+      delegate_to = method_regex.match(meth.to_s)[1]
       self.send(delegate_to, *args, &block)
     else
       super
