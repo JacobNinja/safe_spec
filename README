@@ -1,0 +1,19 @@
+Safe Spec
+______________
+"Safer testing with RSpec"
+
+RSpec allows you to stub a method that an object does not respond to. To alleviate this, safe spec provides you with 
+convenient "safe" methods that enforce the object responds to the message before allowing a stub.
+
+To use a "safe" method, just prepend "safe_" to the stubbing method.
+
+object_instance.safe_stub(:method)
+object_instance.safe_should_receive(:method)
+
+INSTALL:
+
+This has only been tested with RSpec 2. There is a high chance it will not work with the first version of RSpec.
+This has also only been tested using RSpec's mocking framework. 
+
+Add the gem to your Gemfile, and then in your spec_helper add:
+require 'rspec_safe_spec_monkeypatch'
